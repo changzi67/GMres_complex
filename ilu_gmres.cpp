@@ -414,6 +414,8 @@ IluGmres::GmresResult IluGmres::solve(const val_t *b, val_t *sol, double tol, id
     // gmres
     idx_t its = 0;
     for (idx_t outer = 0; outer < maxit; outer++) {
+        std::chrono::steady_clock::time_point Arnoldi_tic;
+        tic(Arnoldi_tic);
         // initial residual
         val_t *v = &V(0, 0), *h = &H(0, 0);
         copy_n(b, n, v);
@@ -467,12 +469,21 @@ IluGmres::GmresResult IluGmres::solve(const val_t *b, val_t *sol, double tol, id
                 return {false, res, its, res_vec};
             }
         }
+        stats.Arnoldi_time += toc(Arnoldi_tic);
+
+        std::chrono::steady_clock::time_point backward_tic;
+        tic(backward_tic);
 
         // solve H * y = d for the coefficient of the linear combination
         cblas_ztrsv(CblasColMajor, CblasUpper, CblasNoTrans, CblasNonUnit, j, H_data, h_dim, d, 1); // Solve H * y = d
         alpha = val_t(1); beta = val_t(0);
         cblas_zgemv(CblasColMajor, CblasNoTrans, n, j, &alpha, V_data, n, d, 1, &beta, tmp, 1); // Calc update = V * y
+        stats.backward_time += toc(backward_tic);
+
+        std::chrono::steady_clock::time_point apply_precond_tic;
+        tic(apply_precond_tic);
         apply_precondition(tmp, tmp, work);
+        stats.apply_precond_time += toc(apply_precond_tic);
         vzAdd(n, reinterpret_cast<mkl_t*>(sol), reinterpret_cast<mkl_t*>(tmp), reinterpret_cast<mkl_t*>(sol));
     }
 #undef V

@@ -19,6 +19,9 @@ public:
         double analyze_time;
         double factorize_time;
         double solve_time;
+        double Arnoldi_time;
+        double backward_time;
+        double apply_precond_time;
         idx_t lu_nnz;
         idx_t npivots;
     };

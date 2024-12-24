@@ -6,8 +6,8 @@
 
 inline thread_local std::chrono::steady_clock::time_point TIC;
 
-inline std::chrono::steady_clock::time_point tic() {
-    TIC = std::chrono::steady_clock::now();
+inline std::chrono::steady_clock::time_point tic(std::chrono::steady_clock::time_point& TIC_ = TIC) {
+    TIC_ = std::chrono::steady_clock::now();
     return TIC;
 }
 

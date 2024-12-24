@@ -103,5 +103,8 @@ int main(int argc, char **argv) {
     printf("  analyze:              %f\n", stats.analyze_time);
     printf("  factorize:            %f\n", stats.factorize_time);
     printf("  solve:                %f\n", stats.solve_time);
+    printf("  Arnoldi:              %f\n", stats.Arnoldi_time);
+    printf("  backward:             %f\n", stats.backward_time);
+    printf("  apply precondition:   %f\n", stats.apply_precond_time);
     return 0;
 }
