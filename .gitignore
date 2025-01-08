@@ -6,3 +6,5 @@
 !utils.h
 !README.md
 !run.sh
+!result/
+!result/*

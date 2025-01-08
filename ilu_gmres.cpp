@@ -411,6 +411,7 @@ IluGmres::GmresResult IluGmres::solve(const val_t *b, val_t *sol, double tol, id
     vector<double> res_vec;
     res_vec.reserve(maxit * restart);
 
+std::chrono::steady_clock::time_point apply_precond_tic;
     // gmres
     idx_t its = 0;
     for (idx_t outer = 0; outer < maxit; outer++) {
@@ -435,7 +436,12 @@ IluGmres::GmresResult IluGmres::solve(const val_t *b, val_t *sol, double tol, id
         for (; j < restart && res > tol; j++, h += h_dim) {
             // apply preconditioner
             its++;
+            
+            tic(apply_precond_tic);
             apply_precondition(v, tmp, work); // v = M ^ -1 * v
+            double temp_time = toc(apply_precond_tic);
+            stats.apply_precond_time += temp_time;
+            stats.Arnoldi_time -= temp_time;
             v += n;
 
             // Arnoldi process
@@ -480,7 +486,6 @@ IluGmres::GmresResult IluGmres::solve(const val_t *b, val_t *sol, double tol, id
         cblas_zgemv(CblasColMajor, CblasNoTrans, n, j, &alpha, V_data, n, d, 1, &beta, tmp, 1); // Calc update = V * y
         stats.backward_time += toc(backward_tic);
 
-        std::chrono::steady_clock::time_point apply_precond_tic;
         tic(apply_precond_tic);
         apply_precondition(tmp, tmp, work);
         stats.apply_precond_time += toc(apply_precond_tic);

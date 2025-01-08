@@ -1,0 +1,62 @@
+build/ilu_gmres --mat ../Chevron4/Chevron4.mtx -c 1 -p 1e-3 -e 100
+Input summary
+matrix:                 ../Chevron4/Chevron4.mtx
+n:                      711450
+nnz:                    6376412
+ILUTP
+  fill factor:          1
+  extra fill:           100
+  drop tol:             0.001
+GMRES
+  tol:                  1e-06
+  maxit:                10
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             30404764
+GMRES
+  success:              1
+  relative residual:    9.64159e-07
+  iterations:           222
+  relative error:       4.25505e-05
+time
+  analyze:              0.373047
+  factorize:            3.869010
+  solve:                40.982956
+  Arnoldi:              19.863844
+  backward:             0.153182
+  apply precondition:   20.612393
+
+build/ilu_gmres --mat ../Chevron4/Chevron4.mtx -c 2 -n 10 -i 100
+Input summary
+matrix:                 ../Chevron4/Chevron4.mtx
+n:                      711450
+nnz:                    6376412
+ILUTP
+  fill factor:          1
+  extra fill:           0
+  drop tol:             0.001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             0
+GMRES
+  success:              1
+  relative residual:    9.97349e-07
+  iterations:           3236
+  relative error:       5.90284e-05
+time
+  analyze:              0.366484
+  factorize:            1.253901
+  solve:                369.603609
+  Arnoldi:              318.591261
+  backward:             2.223169
+  apply precondition:   48.460553
+  

@@ -1,0 +1,61 @@
+build/ilu_gmres --mat ../mono_500Hz/mono_500Hz.mtx -c 1 -p 1e-3 -i 100 -e 1000
+Input summary
+matrix:                 ../mono_500Hz/mono_500Hz.mtx
+n:                      169410
+nnz:                    5036288
+ILUTP
+  fill factor:          1
+  extra fill:           1000
+  drop tol:             0.001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             40417296
+GMRES
+  success:              1
+  relative residual:    9.89195e-07
+  iterations:           395
+  relative error:       3.99279e-05
+time
+  analyze:              0.384731
+  factorize:            131.701219
+  solve:                45.569446
+  Arnoldi:              11.793601
+  backward:             0.053603
+  apply precondition:   33.643216
+
+build/ilu_gmres --mat ../mono_500Hz/mono_500Hz.mtx -c 2 -n 50 -r 200 -i 100
+Input summary
+matrix:                 ../mono_500Hz/mono_500Hz.mtx
+n:                      169410
+nnz:                    5036288
+ILUTP
+  fill factor:          1
+  extra fill:           0
+  drop tol:             0.001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              200
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             0
+GMRES
+  success:              1
+  relative residual:    9.99783e-07
+  iterations:           14087
+  relative error:       8.55308e-05
+time
+  analyze:              0.384986
+  factorize:            4.166407
+  solve:                817.402674
+  Arnoldi:              696.224771
+  backward:             1.918293
+  apply precondition:   119.102524
+  
