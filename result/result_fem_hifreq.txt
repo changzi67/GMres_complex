@@ -1,0 +1,177 @@
+build/ilu_gmres  --mat ../fem_hifreq_circuit/fem_hifreq_circuit.mtx  -d 1e-9 -e 2500  -i 100
+Input summary
+matrix:                 ../fem_hifreq_circuit/fem_hifreq_circuit.mtx
+n:                      491100
+nnz:                    20239237
+ILUTP
+  fill factor:          1
+  extra fill:           2500
+  drop tol:             1e-09
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             461969617
+GMRES
+  success:              1
+  relative residual:    8.50929e-07
+  iterations:           4
+  relative error:       19.3363
+time
+  analyze:              1.121734
+  factorize:            1753.933098
+  solve:                4.820980
+  Arnoldi:              0.051067
+  backward:             0.000838
+  apply precondition:   4.452141
+
+
+MATLAB:
+droptol = 1e-8
+t_amd =
+   0.512869000000000
+t_ilu =
+     1.703092168000000e+03
+t_gmres =  26.972351
+relres =
+     7.486095096500659e-07
+error =
+     7.603700544737070e-04
+nnz(L) =
+   220633851
+nnz(U) =
+   215994782
+nnz(L+U) =
+   436628633
+iter =
+     1    27
+
+build/ilu_gmres  --mat ../fem_hifreq_circuit/fem_hifreq_circuit.mtx  -d 1e-9 -e 2500 -t 1e-8
+Input summary
+matrix:                 ../fem_hifreq_circuit/fem_hifreq_circuit.mtx
+n:                      491100
+nnz:                    20239237
+ILUTP
+  fill factor:          1
+  extra fill:           2500
+  drop tol:             1e-09
+GMRES
+  tol:                  1e-08
+  maxit:                10
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             461969617
+GMRES
+  success:              1
+  relative residual:    9.62246e-09
+  iterations:           9
+  relative error:       0.259535
+time
+  analyze:              0.854986
+  factorize:            1675.902266
+  solve:                9.162581
+  Arnoldi:              0.108574
+  backward:             0.001813
+  apply precondition:   8.747680
+
+build/ilu_gmres  --mat ../fem_hifreq_circuit/fem_hifreq_circuit.mtx -d 1e-8 -e 5000
+Input summary
+matrix:                 ../fem_hifreq_circuit/fem_hifreq_circuit.mtx
+n:                      491100
+nnz:                    20239237
+ILUTP
+  fill factor:          1
+  extra fill:           5000
+  drop tol:             1e-08
+GMRES
+  tol:                  1e-06
+  maxit:                10
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             474725137
+GMRES
+  success:              1
+  relative residual:    7.72724e-07
+  iterations:           4
+  relative error:       3.63178
+time
+  analyze:              1.142816
+  factorize:            1391.749154
+  solve:                4.909192
+  Arnoldi:              0.080784
+  backward:             0.000762
+  apply precondition:   4.518207
+
+build/ilu_gmres  --mat ../fem_hifreq_circuit/fem_hifreq_circuit.mtx -d 1e-8 -e 2500
+Input summary
+matrix:                 ../fem_hifreq_circuit/fem_hifreq_circuit.mtx
+n:                      491100
+nnz:                    20239237
+ILUTP
+  fill factor:          1
+  extra fill:           2500
+  drop tol:             1e-08
+GMRES
+  tol:                  1e-06
+  maxit:                10
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             416162823
+GMRES
+  success:              1
+  relative residual:    7.7361e-07
+  iterations:           7
+  relative error:       6.57042
+time
+  analyze:              1.143452
+  factorize:            1411.352696
+  solve:                6.963125
+  Arnoldi:              0.103094
+  backward:             0.001541
+  apply precondition:   6.549667
+
+build/ilu_gmres  --mat ../fem_hifreq_circuit/fem_hifreq_circuit.mtx  -c 2 -n 5 -r 600 -i 100
+Input summary
+matrix:                 ../fem_hifreq_circuit/fem_hifreq_circuit.mtx
+n:                      491100
+nnz:                    20239237
+ILUTP
+  fill factor:          1
+  extra fill:           0
+  drop tol:             0.001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              600
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             0
+GMRES
+  success:              1
+  relative residual:    9.9999e-07
+  iterations:           43293
+  relative error:       2.14779
+time
+  analyze:              0.811801
+  factorize:            1.660974
+  solve:                3329.405015
+  Arnoldi:              2552.462255
+  backward:             7.854184
+  apply precondition:   767.858607
+
+  

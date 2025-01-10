@@ -1,0 +1,344 @@
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-9 -e 10000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           10000
+  drop tol:             1e-09
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             827222745
+GMRES
+  success:              1
+  relative residual:    5.43424e-08
+  iterations:           2
+  relative error:       35.7926
+time
+  analyze:              2.604544
+  factorize:            6443.024213
+  solve:                9.428172
+  Arnoldi:              0.108622
+  backward:             0.011417
+  apply precondition:   8.809630
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-8 -e 5000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           5000
+  drop tol:             1e-08
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             716485794
+GMRES
+  success:              1
+  relative residual:    7.31184e-07
+  iterations:           4
+  relative error:       35.7926
+time
+  analyze:              1.141581
+  factorize:            2997.089838
+  solve:                7.035676
+  Arnoldi:              0.067311
+  backward:             0.001025
+  apply precondition:   6.576862
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 2 -n 5 -r 500 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           0
+  drop tol:             0.001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              500
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             0
+GMRES
+  success:              0
+  relative residual:    0.000767178
+  iterations:           50000
+  relative error:       35.7616
+time
+  analyze:              1.367099
+  factorize:            2.317234
+  solve:                3828.844505
+  Arnoldi:              2861.333592
+  backward:             10.773180
+  apply precondition:   955.353567
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-7 -e 5000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           5000
+  drop tol:             1e-07
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             676216379
+GMRES
+  success:              1
+  relative residual:    8.25809e-07
+  iterations:           4
+  relative error:       35.7926
+time
+  analyze:              1.316775
+  factorize:            2763.679951
+  solve:                6.977338
+  Arnoldi:              0.064634
+  backward:             0.000911
+  apply precondition:   6.513161
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-8 -e 2000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           2000
+  drop tol:             1e-08
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             489812462
+GMRES
+  success:              1
+  relative residual:    5.5051e-07
+  iterations:           25
+  relative error:       35.7926
+time
+  analyze:              1.243965
+  factorize:            1917.641594
+  solve:                27.506349
+  Arnoldi:              0.440856
+  backward:             0.006639
+  apply precondition:   26.667310
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-5 -e 5000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           5000
+  drop tol:             1e-05
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             485068023
+GMRES
+  success:              1
+  relative residual:    6.60232e-07
+  iterations:           7
+  relative error:       35.7926
+time
+  analyze:              1.393953
+  factorize:            1425.625333
+  solve:                8.055381
+  Arnoldi:              0.087306
+  backward:             0.001631
+  apply precondition:   7.577219
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-7 -e 2000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           2000
+  drop tol:             1e-07
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             480687294
+GMRES
+  success:              1
+  relative residual:    5.81468e-07
+  iterations:           25
+  relative error:       35.7926
+time
+  analyze:              1.306499
+  factorize:            1901.075088
+  solve:                26.597632
+  Arnoldi:              0.471105
+  backward:             0.004171
+  apply precondition:   25.737643
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-4 -e 5000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           5000
+  drop tol:             0.0001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             328688101
+GMRES
+  success:              1
+  relative residual:    7.30078e-07
+  iterations:           23
+  relative error:       35.7926
+time
+  analyze:              1.161047
+  factorize:            815.734979
+  solve:                18.077251
+  Arnoldi:              0.442777
+  backward:             0.005141
+  apply precondition:   17.092612
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-5 -e 2000 -i 100
+
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           2000
+  drop tol:             1e-05
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             383845097
+GMRES
+  success:              1
+  relative residual:    9.85819e-07
+  iterations:           24
+  relative error:       35.7926
+time
+  analyze:              1.162277
+  factorize:            1347.513559
+  solve:                20.421944
+  Arnoldi:              0.355549
+  backward:             0.006032
+  apply precondition:   19.669957
+
+
+build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-4 -e 2000 -i 100
+
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           2000
+  drop tol:             0.0001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             280676827
+GMRES
+  success:              1
+  relative residual:    8.07348e-07
+  iterations:           35
+  relative error:       35.7926
+time
+  analyze:              1.181694
+  factorize:            1004.409763
+  solve:                65.359394
+  Arnoldi:              2.592465
+  backward:             0.006518
+  apply precondition:   62.056563
+
+ build/ilu_gmres  --mat ../dielFilterV2clx/dielFilterV2clx.mtx  -b ../dielFilterV2clx/dielFilterV2clx_b.mtx   -c 1 -d 1e-4 -e 1000 -i 100
+Input summary
+matrix:                 ../dielFilterV2clx/dielFilterV2clx.mtx
+n:                      607232
+nnz:                    25309272
+ILUTP
+  fill factor:          1
+  extra fill:           1000
+  drop tol:             0.0001
+GMRES
+  tol:                  1e-06
+  maxit:                100
+  restart:              100
+
+Output summary
+ILUTP
+  number of pivots:     0
+  nnz (LU):             229354948
+GMRES
+  success:              1
+  relative residual:    9.93529e-07
+  iterations:           385
+  relative error:       35.7926
+time
+  analyze:              1.438756
+  factorize:            589.256373
+  solve:                208.947139
+  Arnoldi:              8.044670
+  backward:             0.061200
+  apply precondition:   200.577606
+
